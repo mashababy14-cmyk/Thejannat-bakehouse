@@ -1,0 +1,1331 @@
+/* ১. বেসিক সেটআপ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: hidden; /* সাইড স্ক্রল বন্ধ */
+}
+
+/* ২. ন্যাভিগেশন বার */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff5f8;
+  height: 80px;
+  padding: 0 7%;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  animation: slideDown 1s ease forwards;
+}
+
+.logo a {
+  font-family: "Pacifico", cursive;
+  font-size: 28px;
+  text-decoration: none;
+  color: #333;
+}
+
+#pink {
+  font-family: "Pacifico", cursive;
+  color: #ff85a2;
+}
+
+.navbar a {
+  font-size: 18px;
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ff85a2;
+}
+
+.icon {
+  font-size: 25px;
+  color: black;
+  margin-left: 20px;
+  transition: 0.7s;
+  cursor: pointer;
+  display: none;
+}
+
+.icon:hover {
+  transform: rotate(15deg);
+  color: #ff85a2;
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* ===========================
+   মোবাইল রেসপন্সিভ ডিজাইন
+   =========================== */
+@media (max-width: 768px) {
+  /* ১. আইকন দৃশ্যমান করা */
+  .icon {
+    display: block;
+    font-size: 30px;
+  }
+
+  /* ২. ন্যাপবার বা মেনু বক্সের ডিজাইন */
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff5f8;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.5s ease;
+  }
+
+  /* ৩. জাভাস্ক্রিপ্ট দিয়ে যখন 'active' ক্লাস যুক্ত হবে */
+  .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  /* ৪. লিংকগুলো নিচে নিচে সাজানো */
+  .navbar a {
+    display: block;
+    margin: 2rem;
+    font-size: 20px;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  /* ৫. হোভার ইফেক্ট */
+  .navbar a:hover {
+    background: #ff85a2;
+    color: white;
+    padding-left: 20px;
+  }
+}
+/* ৩. হিরো সেকশন (মেইন ফিক্স) */
+.hero {
+  margin-top: 80px;
+  min-height: 90vh;
+  background: linear-gradient(to right, #fff5f8, #ffe3ec);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 9%;
+  gap: 2rem;
+}
+
+/* বাম পাশের কন্টেন্ট */
+.content {
+  flex: 1; /* অর্ধেক জায়গা */
+}
+
+.content h3 {
+  font-family: "Pacifico", cursive;
+  color: #ff85a2;
+  font-size: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.content h1 {
+  font-size: 3.5rem; /* ফন্ট সাইজ একটু কমালাম যাতে সুন্দর দেখায় */
+  color: #333;
+  line-height: 1.2; /* ⭐ টাইপো ফিক্স করা হলো (কমা তুলে ডট) */
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.content p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  padding-right: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* বাটন */
+.btnhero {
+  padding: 12px 35px;
+  background: #ff85a2;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
+  transition: 0.3s;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.5s;
+}
+.btnhero a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.btnhero:hover {
+  transform: scale(1.05);
+  background: #ff6b81;
+}
+
+/* ডান পাশের ছবি */
+.imagehero {
+  flex: 1; /* বাকি অর্ধেক জায়গা */
+  display: flex;
+  justify-content: center; /* ছবি মাঝখানে */
+}
+
+.imagehero img {
+  width: 90%;
+  max-width: 500px;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  animation: cakeAppear 1s ease forwards, float 4s ease-in-out infinite 1s;
+}
+
+@keyframes float {
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px); /* উপরে উঠবে */
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes cakeAppear {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding-top: 100px;
+  }
+  .content h1 {
+    font-size: 2.5rem;
+  }
+  .imagehero img {
+    width: 80%;
+    margin-top: 30px;
+  }
+}
+/* ========================
+   Best Seller Section (CSS Image)
+   ======================== */
+
+.best-seller {
+  background-color: #fff;
+  padding: 5rem 9%;
+}
+
+.heading {
+  text-align: center;
+  font-size: 3.5rem;
+  color: #333;
+  margin-bottom: 3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.heading span {
+  color: #ff85a2;
+  font-family: "Pacifico", cursive;
+}
+
+/* গ্রিড সিস্টেম (রেসপন্সিভ করার জন্য) */
+.box-container {
+  display: grid;
+  /* মোবাইল, ট্যাব, ল্যাপটপ সবখানে অটোমেটিক ফিট হবে */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* কার্ড ডিজাইন */
+.box {
+  position: relative;
+  background: #fff5f8;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid rgba(255, 133, 162, 0.1);
+  transition: 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  background: #fff;
+  border: 1px solid #ff85a2;
+}
+
+/* ব্যাজ ডিজাইন */
+.badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #ff85a2;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+/* ---- ইমেজ এরিয়া (মেইন কাজ) ---- */
+.cake-img {
+  height: 250px; /* ইমেজের উচ্চতা ফিক্সড */
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+
+  /* ছবি যাতে ব্যাকগ্রাউন্ড হিসেবে সুন্দরভাবে বসে */
+  background-size: contain; /* ছবি পুরোটা দেখা যাবে */
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+
+/* হোভার করলে ছবি একটু জুম হবে */
+.box:hover .cake-img {
+  transform: scale(1.05);
+}
+
+/* আলাদা আলাদা কেকের জন্য আলাদা ছবি */
+.cake-1 {
+  background-image: url("tranding.jpeg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px; /* তোমার প্রথম ছবির নাম */
+}
+
+.cake-2 {
+  background-image: url("most sell.jpeg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px; /* তোমার দ্বিতীয় ছবির নাম */
+}
+
+.cake-3 {
+  background-image: url("hot.jpeg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px; /* তোমার তৃতীয় ছবির নাম */
+}
+
+/* ---- টেক্সট ও বাটন ---- */
+.box h3 {
+  font-size: 1.8rem;
+  color: #333;
+  padding: 1rem 0;
+}
+
+.stars i {
+  font-size: 1.5rem;
+  color: #ffa502;
+}
+
+.price {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+/* বাটন ডিজাইন (More Info) */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 2.5rem;
+  background: #ff85a2;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(255, 133, 162, 0.4);
+  transition: 0.3s;
+  text-decoration: none; /* লিংকের নিচের দাগ সরানোর জন্য */
+  border: none;
+}
+
+.btn:hover {
+  background: #ff6b81;
+  transform: scale(1.05);
+}
+
+/* ========================
+    Menu Section Design
+   ======================== */
+
+.menu {
+  background-color: #fff5f8; /* হালকা পিংক ব্যাকগ্রাউন্ড */
+  padding: 5rem 9%;
+}
+
+/* গ্রিড লেআউট (রেসপন্সিভ) */
+.menu-container {
+  display: grid;
+  /* কার্ডগুলো একটু ছোট হবে যাতে বেশি আঁটে */
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+}
+
+/* কার্ড ডিজাইন */
+.menu-box {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden; /* ছবি যাতে বাইরে না যায় */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.menu-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+/* ইমেজ এরিয়া */
+.menu-box .image {
+  height: 200px;
+  width: 100%;
+  overflow: hidden; /* জুম এফেক্টের জন্য */
+}
+
+.menu-box .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* ছবি চ্যাপ্টা হবে না */
+  transition: 0.5s ease;
+}
+
+/* হোভার করলে ছবি জুম হবে */
+.menu-box:hover .image img {
+  transform: scale(1.1);
+}
+
+/* টেক্সট ও কন্টেন্ট */
+.menu-box .content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.menu-box h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.menu-box p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.menu-box .price {
+  font-size: 1.3rem;
+  color: #ff85a2; /* পিংক কালার */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* বাটন (More Info) */
+.menu-box .btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: #333; /* মেনু বাটন কালো রাখলাম যাতে আলাদা লাগে */
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-box .btn:hover {
+  background: #ff85a2; /* হোভার করলে পিংক */
+  transform: scale(1.05);
+}
+/* I chose "About Section" work  */
+
+/* ========================
+   Why Choose Us Design
+   ======================== */
+
+.why-us {
+  background-color: #fff; /* সাদা ব্যাকগ্রাউন্ড */
+  padding: 5rem 9%;
+}
+
+.why-container {
+  display: grid;
+  /* ৩টা কলাম হবে, মোবাইল রেসপন্সিভ */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.why-box {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  /* শুরুতে বর্ডার থাকবে না, হোভার করলে আসবে */
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+/* হোভার করলে বক্সটা ফোকাস হবে */
+.why-box:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 1px solid #ff85a2;
+  transform: translateY(-5px);
+}
+
+/* আইকন ডিজাইন */
+.why-box i {
+  font-size: 3rem;
+  color: #ff85a2; /* পিংক আইকন */
+  background: #fff5f8; /* আইকনের পেছনে হালকা গোল্লা */
+  padding: 1.5rem;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  transition: 0.3s;
+}
+
+/* হোভার করলে আইকন ঘুরবে এবং রঙ বদলাবে */
+.why-box:hover i {
+  background: #ff85a2;
+  color: #fff;
+  transform: rotate(360deg); /* এক চক্কর ঘুরবে */
+}
+
+/* টাইটেল */
+.why-box h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* প্যারাগ্রাফ */
+.why-box p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+/* Service  area work  */
+
+/* ========================
+   Service Area Design
+   ======================== */
+
+.service {
+  background-color: #fff5f8; /* হালকা পিংক ব্যাকগ্রাউন্ড */
+  padding: 5rem 9%;
+  text-align: center;
+}
+
+.sub-heading {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.sub-heading span {
+  color: #ff85a2;
+  font-weight: bold;
+}
+
+.service-container {
+  display: grid;
+  /* রেসপন্সিভ গ্রিড */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* হোভার এফেক্ট */
+.service-box:hover {
+  transform: translateY(-5px);
+  border: 1px solid #ff85a2;
+}
+
+/* আইকন */
+.service-box i {
+  font-size: 2.5rem;
+  color: #ff85a2;
+  margin-bottom: 1rem;
+  background: #fff5f8;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+/* টাইটেল */
+.service-box h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* বিস্তারিত লেখা */
+.service-box p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* ডেলিভারি টাইম ব্যাজ */
+.delivery-time {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #ff85a2;
+  color: #fff;
+  border-radius: 5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* হোভার করলে ব্যাজের রঙ বদলাবে */
+.service-box:hover .delivery-time {
+  background: #333;
+}
+/* Order guide and policy section work  */
+
+/* ========================
+   Order Guide & Policy Design
+   ======================== */
+
+.order-guide {
+  background-color: #fff; /* সাদা ব্যাকগ্রাউন্ড */
+  padding: 5rem 9%;
+}
+
+.guide-container {
+  display: flex;
+  flex-wrap: wrap; /* মোবাইলে নিচে নিচে আসবে */
+  gap: 3rem;
+  justify-content: center;
+}
+
+/* টাইটেল ডিজাইন */
+.title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ff85a2;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ---- বাম পাশ: Steps ---- */
+.steps-container {
+  flex: 1 1 400px; /* ফ্লেক্সিবল সাইজ */
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: #fff5f8;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  transition: 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.step:hover {
+  transform: translateX(10px); /* ডানে সরবে */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 1px solid #ff85a2;
+}
+
+.step i {
+  font-size: 2.5rem;
+  color: #fff;
+  background: #ff85a2;
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.step h4 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* ---- ডান পাশ: Policy ---- */
+.policy-container {
+  flex: 1 1 400px;
+  background: #fff5f8; /* পুরো বক্সের ব্যাকগ্রাউন্ড পিংক */
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px dashed #ff85a2; /* ড্যাশ বর্ডার */
+}
+
+.policy-container ul {
+  list-style: none;
+}
+
+.policy-container ul li {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  line-height: 1.6;
+}
+
+.policy-container ul li i {
+  color: #ff85a2;
+  font-size: 1.3rem;
+  margin-top: 3px;
+}
+
+/* হাইলাইট করা টেক্সট */
+.policy-container strong {
+  color: #333;
+  font-weight: 700;
+}
+/* About us section work  */
+
+/* ========================
+   About Us Section Design
+   ======================== */
+
+.about {
+  background-color: #fff5f8; /* হালকা পিংক ব্যাকগ্রাউন্ড */
+  padding: 5rem 9%;
+  display: flex; /* ছবি ও লেখা পাশাপাশি */
+  align-items: center;
+  justify-content: center;
+  gap: 3rem; /* মাঝখানে ফাঁকা */
+  flex-wrap: wrap; /* মোবাইলে নিচে নিচে আসবে */
+}
+
+/* বাম পাশের ছবি */
+.about-image {
+  flex: 1 1 45rem; /* ফ্লেক্সিবল সাইজ */
+  text-align: center;
+}
+
+.about-image img {
+  width: 90%; /* ছবি বক্সের ৯০% নিবে */
+  max-width: 500px;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  border: 5px solid #ff85a2; /* পিংক বর্ডার */
+}
+
+/* ডান পাশের লেখা */
+.about-content {
+  flex: 1 1 45rem;
+  text-align: left;
+}
+
+.about-content h2 {
+  font-size: 3.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: left; /* লেখা বামে থাকবে */
+}
+
+.about-content h3 {
+  font-size: 2rem;
+  color: #ff85a2;
+  margin-bottom: 1.5rem;
+  font-family: "Pacifico", cursive;
+}
+
+.about-content p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* বাটন (আগের বাটন স্টাইল ব্যবহার করবে) */
+.about-content .btn {
+  margin-top: 1rem;
+  /* Hero section এর বাটনের স্টাইল ব্যবহার করবে */
+}
+/* ===========================
+   Order & Policy Mobile Fix
+   =========================== */
+
+@media (max-width: 768px) {
+  /* ১. গাইড কন্টেইনার */
+  .guide-container {
+    flex-direction: column; /* জোর করে নিচে নিচে নামানো */
+    gap: 2rem;
+  }
+
+  /* ২. স্টেপস এবং পলিসি বক্স */
+  .steps-container,
+  .policy-container {
+    flex: 1 1 100%; /* মোবাইলে ১০০% উইডথ নিবে */
+    width: 100%; /* ৪o0px এর লিমিট ভেঙে দিবে */
+    min-width: auto; /* ফিক্সড সাইজ রিমুভ */
+  }
+
+  /* ৩. স্টেপ আইকন ছোট করা */
+  .step {
+    padding: 1rem; /* প্যাডিং কমানো */
+    align-items: flex-start; /* আইকন উপরে থাকবে, লেখা নিচে নামলে সমস্যা নেই */
+  }
+
+  .step i {
+    height: 50px; /* আইকন বক্স ছোট করা */
+    width: 50px;
+    line-height: 50px;
+    font-size: 1.5rem; /* আইকন সাইজ ছোট করা */
+    flex-shrink: 0; /* আইকন চ্যাপ্টা হবে না */
+  }
+
+  /* ৪. পলিসি টেক্সট ফিক্স */
+  .policy-container {
+    padding: 1.5rem; /* প্যাডিং কমানো */
+  }
+
+  .policy-container ul li {
+    font-size: 1rem; /* ফন্ট সাইজ একটু ছোট */
+  }
+}
+/* Contracts section and footer section work  */
+
+/* ========================
+   Contact Section Design
+   ======================== */
+.contact {
+  background-color: #fff;
+  padding: 5rem 9%;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; /* মোবাইলে নিচে নিচে আসবে */
+  gap: 2rem;
+}
+
+/* বাম পাশের ইনফো বক্স */
+.contact-info {
+  flex: 1 1 40rem;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: #fff5f8;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-box i {
+  font-size: 2.5rem;
+  color: #ff85a2;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.info-box h3 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.info-box p {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* ডান পাশের ফর্ম */
+.contact form {
+  flex: 1 1 40rem;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  background: #fff5f8;
+}
+
+.contact form h3 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  color: #333;
+  font-family: "Pacifico", cursive;
+}
+
+.contact form .box {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  color: #333;
+  background: #fff;
+  border-radius: 0.5rem;
+  margin: 0.7rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contact form .box:focus {
+  border-color: #ff85a2; /* ফোকাস করলে বর্ডার পিংক হবে */
+}
+
+.contact form textarea {
+  height: 15rem;
+  resize: none;
+}
+
+/* ========================
+   Footer Section Design
+   ======================== */
+.footer {
+  background: #fff5f8; /* হালকা পিংক ব্যাকগ্রাউন্ড */
+  padding: 2rem 9%;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.footer .box h3 {
+  font-size: 2.2rem;
+  color: #333;
+  padding: 1rem 0;
+  font-family: "Pacifico", cursive;
+}
+
+.footer .box a {
+  display: block;
+  font-size: 1.4rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+.footer .box a i {
+  color: #ff85a2;
+  padding-right: 0.5rem;
+}
+
+.footer .box a:hover {
+  color: #ff85a2;
+  padding-left: 1rem; /* হোভার করলে ডানে সরবে */
+}
+
+.footer .credit {
+  text-align: center;
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  padding: 2rem;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.footer .credit span {
+  color: #ff85a2;
+  font-weight: bold;
+}
+/* =========================================
+   ALL MOBILE RESPONSIVE FIXES (FINAL)
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* --- ১. গ্লোবাল ফিক্স (সাইড স্ক্রল বন্ধ) --- */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  section {
+    padding: 3rem 5%; /* প্যাডিং কমানো হলো */
+  }
+
+  /* --- ২. কন্টাক্ট সেকশন (আইকন ও টেক্সট ছোট করা) --- */
+  .contact-container {
+    flex-direction: column !important;
+    gap: 1.5rem;
+  }
+
+  .contact-info,
+  .contact form {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* ইনফো বক্স সাইজ */
+  .info-box {
+    padding: 1rem !important; /* বক্সের সাইজ কমালাম */
+    gap: 1rem !important;
+  }
+
+  /* ⭐ আইকন ছোট করা */
+  .info-box i {
+    font-size: 1.2rem !important; /* আইকন এখন ছোট */
+    padding: 0.8rem !important; /* গোল্লা ছোট */
+    height: 40px !important;
+    width: 40px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* ⭐ লেখা ছোট করা */
+  .info-box h3 {
+    font-size: 1.2rem !important; /* টাইটেল ছোট */
+  }
+
+  .info-box p {
+    font-size: 0.9rem !important; /* নাম্বার/ইমেইল ছোট */
+  }
+
+  /* ফর্ম ইনপুট ফিক্স */
+  .contact form .box,
+  .contact form textarea {
+    width: 100% !important;
+    font-size: 1rem !important; /* ইনপুট লেখা ছোট */
+  }
+
+  /* --- ৩. রিভিউ সেকশন ফিক্স --- */
+  .review .box-container {
+    grid-template-columns: 1fr !important; /* একটা কলাম */
+  }
+
+  .review .box {
+    padding: 1.5rem !important;
+  }
+
+  /* --- ৪. ফুটার সেকশন ফিক্স --- */
+  .footer {
+    text-align: center;
+  }
+
+  .footer .box-container {
+    grid-template-columns: 1fr !important; /* সব নিচে নিচে */
+    gap: 2rem;
+  }
+
+  .footer .box h3 {
+    font-size: 1.5rem !important; /* ফুটার টাইটেল ছোট */
+  }
+
+  .footer .box a {
+    font-size: 1rem !important; /* লিংক টেক্সট ছোট */
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+/* ===========================
+   Product Details Page Design
+   =========================== */
+
+.details {
+  padding: 8rem 9% 2rem;
+  background-color: #fff;
+  min-height: 80vh;
+}
+
+.details-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center; /* লম্বালম্বি মাঝখানে */
+  justify-content: center;
+}
+
+/* --- ছবি --- */
+.details-img {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.details-img img {
+  width: 100%;
+  max-width: 500px; /* ছবি যাতে বিশাল না হয় */
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: #fff5f8;
+  padding: 20px;
+  object-fit: cover;
+}
+
+/* --- কন্টেন্ট --- */
+.details-content {
+  flex: 1 1 60%;
+}
+
+.details-content .category {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.details-content h2 {
+  font-size: 3rem;
+  color: #333;
+  font-family: "Pacifico", cursive;
+  margin-bottom: 1rem;
+}
+
+.details-content h3 {
+  font-size: 2.5rem;
+  color: #ff85a2;
+  margin-bottom: 2rem;
+}
+
+.details-content p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* --- অপশন (ওজন ও ফ্লেভার) --- */
+.options {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.options span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.options select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ff85a2;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+}
+
+/* --- অর্ডার বাটন --- */
+.btn-order {
+  display: inline-block;
+  padding: 12px 35px;
+  background: #25d366; /* WhatsApp Green */
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-order:hover {
+  transform: scale(1.05);
+  background: #1ebc57;
+}
+
+.btn-order i {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+/* =========================================
+   PRODUCT DETAILS MOBILE FIX (Media Query)
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* ১. প্যাডিং ঠিক করা */
+  .details {
+    padding: 120px 5% 2rem !important; /* হেডারের নিচে জায়গা */
+  }
+
+  /* ২. কলাম লেআউট */
+  .details-container {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+
+  /* ৩. সাইজ ১০০% করা */
+  .details-img,
+  .details-content {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+
+  /* ৪. ছবি স্টাইল */
+  .details-img img {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+  /* ৫. ফন্ট সাইজ ছোট করা */
+  .details-content h2 {
+    font-size: 2rem !important;
+  }
+
+  .details-content h3 {
+    font-size: 1.8rem !important;
+  }
+
+  /* ৬. অপশন নিচে নিচে */
+  .options {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .weight,
+  .flavor {
+    width: 100%;
+  }
+
+  .options select {
+    width: 100%;
+  }
+
+  /* ৭. বাটন */
+  .btn-order {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+/* Pre-loader work  */
+
+/* ===========================
+   Preloader Design
+   =========================== */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff5f8; /* আমাদের থিম কালার */
+  z-index: 9999; /* সবার উপরে থাকার জন্য */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 1s ease; /* ১ সেকেন্ড ধরে স্মুথলি চলে যাবে */
+}
+
+.welcome-text h3 {
+  font-size: 2rem;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.welcome-text h1 {
+  font-size: 4rem;
+  color: #333;
+  font-family: "Pacifico", cursive;
+  margin: 10px 0;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards 0.5s; /* ০.৫ সেকেন্ড পর আসবে */
+}
+
+.welcome-text span {
+  color: #ff85a2; /* পিংক কালার */
+}
+
+/* লোডিং লাইন এনিমেশন */
+.loader-line {
+  width: 0;
+  height: 4px;
+  background: #ff85a2;
+  margin: 20px auto 0;
+  border-radius: 5px;
+  animation: loadLine 2.5s ease-in-out forwards;
+}
+
+/* এনিমেশন কি-ফ্রেম */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes loadLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  } /* লাইনটা ছোট থেকে বড় হবে */
+}
+
+/* এই ক্লাসটা জাভাস্ক্রিপ্ট দিয়ে এড করব তখন প্রি-লোডার গায়েব হবে */
+.hide-preloader {
+  opacity: 0;
+  pointer-events: none; /* যাতে গায়েব হওয়ার পর ক্লিক না লাগে */
+}

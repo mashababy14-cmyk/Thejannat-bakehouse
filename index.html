@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Jannat Bakehouse</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="cakelogo.jpeg" type="image/png" />
+  </head>
+  <body>
+    <!-- Preloader Section -->
+    <div id="preloader">
+      <div class="welcome-text">
+        <h3>Welcome to</h3>
+        <h1>The <span>Jannat</span> Bakehouse</h1>
+        <div class="loader-line"></div>
+      </div>
+    </div>
+    <!-- Navbar -->
+    <header class="header" id="header">
+      <div class="logo">
+        <a href="#">The <span id="pink">Jannat</span> Bakehouse</a>
+      </div>
+      <nav class="navbar">
+        <a href="#header">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="icon"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <!-- বাম পাশ: লেখা -->
+      <div class="content">
+        <h3>Premium Quality Cakes</h3>
+        <h1>Make Your Moments Unforgettable</h1>
+        <p>
+          From custom designs to classic flavors, we bring you the freshest
+          cakes in town. Order now to celebrate your special day in style.
+        </p>
+        <button type="button" class="btnhero">
+          <a
+            href="https://wa.me/8801622229921?text=I want to order this cake"
+            class="btn-whatsapp"
+          >
+            <i class="fa-brands fa-whatsapp"></i> Order Now
+          </a>
+        </button>
+      </div>
+
+      <!-- ডান পাশ: ছবি -->
+      <div class="imagehero">
+        <img src="hero png.png" alt="Delicious Cake" />
+      </div>
+    </section>
+
+    <!-- best sell cake work -->
+
+    <section class="best-seller" id="bestseller">
+      <!-- সেকশন হেডিং -->
+      <h2 class="heading">Our <span>Best</span> Sellers</h2>
+
+      <div class="box-container">
+        <!-- কার্ড ১ -->
+        <div class="box">
+          <span class="badge">Trending</span>
+          <!-- ইমেজ ডিভ (সিএসএস দিয়ে ছবি আসবে) -->
+          <div class="cake-img cake-1"></div>
+
+          <h3>Red Heart Velvet</h3>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <div class="price">Chocolate flavor</div>
+          <button
+            class="btn"
+            onclick="showDetails('tranding.jpeg', 'Red Heart Velvet', '750 Tk / pound',  'Available weight and flavor .')"
+          >
+            More Info
+          </button>
+        </div>
+        <!-- বাটন (এখন মোর ইনফো) -->
+
+        <!-- কার্ড ২ -->
+        <div class="box">
+          <span class="badge">Most Sold</span>
+          <div class="cake-img cake-2"></div>
+
+          <h3>Royal Blue & Gold</h3>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="price">Vanilla flavor</div>
+          <button
+            class="btn"
+            onclick="showDetails('most sell.jpeg', 'Royal Blue & Gold', '1400 Tk', 'Available weight and flavor ')"
+          >
+            More Info
+          </button>
+        </div>
+
+        <!-- কার্ড ৩ -->
+        <div class="box">
+          <span class="badge">Hot</span>
+          <div class="cake-img cake-3"></div>
+
+          <h3>Pink Dream</h3>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="price">Vanilla flavor</div>
+
+          <button
+            class="btn"
+            onclick="showDetails('hot.jpeg', 'Pink Dream', '950 Tk / pound', 'Available weight and flavor.')"
+          >
+            More Info
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- mwnu work -->
+
+    <!-- Menu Section (Updated with JS Logic) -->
+    <section class="menu" id="menu">
+      <h2 class="heading">Our <span>Special</span> Menu</h2>
+
+      <div class="menu-container">
+        <!-- কেক ১ -->
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu2.jpeg" alt="Yellow Night Cake" />
+          </div>
+          <div class="content">
+            <h3>Yellow Night Delight</h3>
+            <p>Perfect for Halud or Mehendi events. Available in 1-5 pounds.</p>
+            <div class="price">Available</div>
+            <!-- 👇 JS Logic Added Here -->
+            <button
+              class="btn"
+              onclick="showDetails('menu2.jpeg', 'Yellow Night Delight', '800 Tk / pound', 'Perfect for Halud or Mehendi events. Available in 1-5 pounds.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+
+        <!-- কেক ২ -->
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu1.jpeg" alt="Red Engagement Cake" />
+          </div>
+          <div class="content">
+            <h3>Red Couple Cake</h3>
+            <p>Romantic red velvet cake for engagements and anniversaries.</p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu1.jpeg', 'Red Couple Cake', '1200 Tk / pound', 'Romantic red velvet cake for engagements and anniversaries.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+
+        <!-- কেক ৩ -->
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu4.jpg" alt="Barbie Cake" />
+          </div>
+          <div class="content">
+            <h3>Pink Barbie Fantasy</h3>
+            <p>A dream cake for every little princess's birthday.</p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu4.jpg', 'Pink Barbie Fantasy', '1000 Tk / pound', 'A dream cake for every little princess\'s birthday.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+
+        <!-- কেক ৪ -->
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu5.jpg" alt="Red Flower Cake" />
+          </div>
+          <div class="content">
+            <h3>Floral Red Velvet</h3>
+            <p>Beautifully decorated with edible flowers. Best for gifts.</p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu5.jpg', 'Floral Red Velvet', '900 Tk / pound', 'Beautifully decorated with edible flowers. Best for gifts.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+
+        <!-- কেক ৫ -->
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu3.jpeg" alt="Travel Theme Cake" />
+          </div>
+          <div class="content">
+            <h3>Safe Journey Cake</h3>
+            <p>Best for wishing someone a safe flight or trip.</p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu3.jpeg', 'Safe Journey Cake', '1100 Tk / pound', 'Best for wishing someone a safe flight or trip.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+
+        <!-- কেক ৬ -->
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu7.jpg" alt="Butterfly Cake" />
+          </div>
+          <div class="content">
+            <h3>Red Butterfly</h3>
+            <p>Elegant design with purple butterflies.</p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu7.jpg', 'red Butterfly', '950 Tk / pound', 'Elegant design with purple butterflies.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu8.jpg" alt="Travel Theme Cake" />
+          </div>
+          <div class="content">
+            <h3>Floral Red Velvet</h3>
+            <p>
+              Rich red velvet cake decorated with hand-piped white flowers.
+              Perfect for anniversaries and gifts.
+            </p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu8.jpg', 'Floral Red Velvet', '1100 Tk / pound', 'Best for wishing someone a safe flight or trip.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu12.jpeg" alt="Travel Theme Cake" />
+          </div>
+          <div class="content">
+            <h3>Lavender Dream</h3>
+            <p>
+              Soft purple frosting with elegant ribbon details. A classy choice
+              for any celebration.
+            </p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu12.jpeg', 'Lavender Dream', '1100 Tk / pound', 'Soft purple frosting with elegant ribbon details. A classy choice for any celebration.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu13.jpeg" alt="Travel Theme Cake" />
+          </div>
+          <div class="content">
+            <h3>Super Mom Special</h3>
+            <p>
+              A heartfelt tribute to mothers. Beautifully designed with edible
+              art and gold foil touches.
+            </p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu13.jpeg', ' Super Mom Special', '1100 Tk / pound', 'A heartfelt tribute to mothers. Beautifully designed with edible art and gold foil touches.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu14.jpeg" alt="Travel Theme Cake" />
+          </div>
+          <div class="content">
+            <h3>The Gentleman's Choice</h3>
+            <p>
+              Stylish cake featuring a suit theme with premium gold and silver
+              accents. Perfect for him.
+            </p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu14.jpeg', 'The Gentlemans Choice', '1100 Tk / pound', 'Stylish cake featuring a suit theme with premium gold and silver accents. Perfect for him.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu15.jpeg" alt="Travel Theme Cake" />
+          </div>
+          <div class="content">
+            <h3>Red Heart Milestone</h3>
+            <p>
+              Celebrate special days with this minimalist white cake topped with
+              a bold red heart.
+            </p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu15.jpeg', ' Red Heart Milestone', '1100 Tk / pound', 'Celebrate special days with this minimalist white cake topped with a bold red heart.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-box">
+          <div class="image">
+            <img src="menu9.jpg" alt="Travel Theme Cake" />
+          </div>
+          <div class="content">
+            <h3>Romantic Rose Delight</h3>
+            <p>
+              Classic vanilla cake wrapped in a red ribbon, topped with a fresh
+              red rose. Simple yet elegant.
+            </p>
+            <div class="price">Available</div>
+            <button
+              class="btn"
+              onclick="showDetails('menu9.jpg', ' Romantic Rose Delight', '1100 Tk / pound', 'Classic vanilla cake wrapped in a red ribbon, topped with a fresh red rose. Simple yet elegant.')"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- I chose us section  -->
+
+    <section class="why-us" id="about">
+      <h2 class="heading">Why Choose <span>Us?</span></h2>
+
+      <div class="why-container">
+        <!-- বৈশিষ্ট্য ১ -->
+        <div class="why-box">
+          <i class="fa-solid fa-house-chimney"></i>
+          <h3>100% Homemade</h3>
+          <p>
+            We bake every cake with love in our home kitchen, ensuring hygiene
+            and authentic taste just for you.
+          </p>
+        </div>
+
+        <!-- বৈশিষ্ট্য ২ -->
+        <div class="why-box">
+          <i class="fa-solid fa-leaf"></i>
+          <h3>Fresh Ingredients</h3>
+          <p>
+            No preservatives! We use premium butter, fresh cream, and organic
+            fruits to make your cake delicious.
+          </p>
+        </div>
+
+        <!-- বৈশিষ্ট্য ৩ -->
+        <div class="why-box">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h3>Fast Delivery</h3>
+          <p>
+            We ensure safe and on-time delivery to your doorstep so you can
+            celebrate without worry.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service area work  -->
+
+    <!-- Service Area Section -->
+    <section class="service" id="service">
+      <h2 class="heading">Delivery <span>Areas</span></h2>
+      <!-- সাব-হেডিং দিয়ে বুঝিয়ে দিলাম পুরো সিলেট -->
+      <p class="sub-heading">
+        We are currently delivering all over <span>Sylhet District!</span>
+      </p>
+
+      <div class="service-container">
+        <!-- এরিয়া ১: মেইন টাউন -->
+        <div class="service-box">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <h3>Sylhet City</h3>
+          <p>Zindabazar, Ambarkhana, Chowhatta & surrounding areas.</p>
+          <span class="delivery-time">45 Mins Delivery</span>
+        </div>
+
+        <!-- এরিয়া ২: আবাসিক এলাকা -->
+        <div class="service-box">
+          <i class="fa-solid fa-city"></i>
+          <h3>Residential Hubs</h3>
+          <p>Shahjalal Uposhahar, Tilagor, Shibganj, Akhalia.</p>
+          <span class="delivery-time">1 Hour Delivery</span>
+        </div>
+
+        <!-- এরিয়া ৩: সদর -->
+        <div class="service-box">
+          <i class="fa-solid fa-motorcycle"></i>
+          <h3>Sylhet Sadar</h3>
+          <p>Airport Road, Kadamtoli, Mendibagh, Sheikhghat.</p>
+          <span class="delivery-time">Fast Delivery</span>
+        </div>
+
+        <!-- এরিয়া ৪: পুরো জেলা -->
+        <div class="service-box">
+          <i class="fa-solid fa-globe"></i>
+          <h3>All Upazilas</h3>
+          <p>Beanibazar, Golapganj, Biswanath, and others.</p>
+          <span class="delivery-time">Pre-Order Required</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Guide & Policy Section -->
+    <section class="order-guide" id="order">
+      <h2 class="heading">Order Guide & <span>Policies</span></h2>
+
+      <div class="guide-container">
+        <!-- বাম পাশ: কিভাবে অর্ডার করবেন -->
+        <div class="steps-container">
+          <h3 class="title">How to Order?</h3>
+
+          <div class="step">
+            <i class="fa-solid fa-cake-candles"></i>
+            <div>
+              <h4>Choose Your Cake</h4>
+              <p>Select from our menu or request a custom design.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <h4>Send Details</h4>
+              <p>Send us the photo, weight, and flavor on WhatsApp.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+            <div>
+              <h4>Confirm Order</h4>
+              <p>Pay the advance to confirm your booking.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+              <h4>Get Delivery</h4>
+              <p>Receive your delicious cake at your doorstep!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ডান পাশ: পলিসি বা নিয়ম -->
+        <div class="policy-container">
+          <h3 class="title">Important Policies</h3>
+
+          <ul>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span
+                >For <strong>2-Tier Cakes</strong>, minimum weight must be
+                <strong>2 Pounds</strong>.</span
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span
+                ><strong>150 Tk Advance</strong> payment is required to confirm
+                2-tier or big orders.</span
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span
+                ><strong>Delivery Charge</strong> is to be paid by the
+                customer.</span
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span
+                >For <strong>Customized Cakes</strong>, please pre-order at
+                least <strong>2 Days</strong> in advance.</span
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>
+                <strong> Additional payment </strong> required for
+                <strong>customised cakes</strong> minimum 100Tk.</span
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-heart"></i>
+              <span
+                >We also take urgent orders for
+                <strong>Regular Cakes</strong> (subject to availability).</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- About us section what? Oh sorry, what?  -->
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+      <!-- বাম পাশ: ছবি -->
+      <div class="about-image">
+        <!-- এখানে তোমার বোনের ছবি দাও -->
+        <img src="cakelogo.jpeg" alt="About Our Baker" />
+      </div>
+
+      <!-- ডান পাশ: লেখা -->
+      <div class="about-content">
+        <h2 class="heading">About <span>Us</span></h2>
+        <h3>The Story Behind Every Sweet Bite!</h3>
+        <p>
+          Welcome to The Jannat Bakehouse! I'm Jannat, the heart and hands
+          behind every delicious creation. My journey into baking started from a
+          simple passion for making people happy through sweet treats. I believe
+          a cake is more than just dessert; it's a centerpiece for celebrations,
+          a token of love, and a sweet memory in the making.
+        </p>
+        <p>
+          At Jannat Bakehouse, we pride ourselves on using only the freshest,
+          high-quality ingredients, ensuring every cake is a masterpiece of
+          taste and design. From classic flavors to unique custom creations, we
+          bake with love and attention to detail, just for you. Join us in
+          making your special moments even sweeter!
+        </p>
+        <a href="#" class="btn">Read Our Story</a>
+        <!-- টিম না থাকলে "Read Our Story" দিতে পারো -->
+      </div>
+    </section>
+    <!-- Contract Section and Footer Section work  -->
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Us</span></h2>
+      <div class="contact-container">
+        <!-- বাম পাশ: ইনফরমেশন -->
+        <div class="contact-info">
+          <div class="info-box">
+            <i class="fa-solid fa-phone"></i>
+            <h3>Call Us</h3>
+            <p>+880 1622229921</p>
+          </div>
+          <div class="info-box">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Email Us</h3>
+            <p>thejannatbakehouse@gmail.com</p>
+          </div>
+
+          <div class="info-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <h3>Location</h3>
+            <p>Modina Market, Sylhet, Bangladesh</p>
+          </div>
+        </div>
+
+        <!-- ডান পাশ: মেসেজ ফর্ম -->
+        <form action="">
+          <h3>Send us a Message</h3>
+          <input type="text" placeholder="Your Name" class="box" />
+          <input type="email" placeholder="Your Email" class="box" />
+          <input type="number" placeholder="Your Number" class="box" />
+          <textarea
+            name=""
+            class="box"
+            placeholder="Your Message"
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+          <input type="submit" value="Send Message" class="btn" />
+        </form>
+      </div>
+    </section>
+    <!-- ফোটার সেকশন বার্থ।  -->
+
+    <!-- Footer Section -->
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>Quick Links</h3>
+          <a href="#home"> <i class="fa-solid fa-arrow-right"></i> Home </a>
+          <a href="#menu"> <i class="fa-solid fa-arrow-right"></i> Menu </a>
+          <a href="#about"> <i class="fa-solid fa-arrow-right"></i> About </a>
+          <a href="#contact">
+            <i class="fa-solid fa-arrow-right"></i> Contact
+          </a>
+        </div>
+
+        <div class="box">
+          <h3>Contact Info</h3>
+          <a
+            href="tel:
++880 1622229921"
+            target="_blank"
+          >
+            <i class="fa-solid fa-phone"></i> +880 1622229921
+          </a>
+          <a href="mailto:thejannatbakehouse@gmail.com">
+            <i class="fa-solid fa-envelope"></i> thejannatbake@gmail.com
+          </a>
+          <a
+            href="https://www.google.com/maps/place/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6+%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%97%E0%A6%B0%E0%A6%BF+%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A3+%E0%A6%93+%E0%A6%89%E0%A6%A8%E0%A7%8D%E0%A6%A8%E0%A7%9F%E0%A6%A8+%E0%A6%95%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%B0/@24.911364,91.8453006,18z/data=!4m6!3m5!1s0x3750553fadd0da89:0xd89df4eeb46940bb!8m2!3d24.9113643!4d91.8462838!16s%2Fg%2F11fpfzbng0?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+          >
+            <i class="fa-solid fa-location-dot"></i> Sylhet, Bangladesh
+          </a>
+        </div>
+
+        <div class="box">
+          <h3>Follow Us</h3>
+          <a href="https://www.facebook.com/share/1BwWx9MBsq/" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i> Facebook
+          </a>
+          <a href="#"> <i class="fa-brands fa-instagram"></i> Instagram </a>
+          <a
+            href="https://wa.me/8801622229921?text=Hello,
+I am interested in an event cake for an upcoming program.
+Please share your package details and pricing.
+Thank you."
+            class="btn-whatsapp"
+            target="_blank"
+          >
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="credit">
+        @Created by <span>Sadi Carno</span> | All Rights Reserved
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
