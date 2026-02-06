@@ -51,18 +51,56 @@ body {
   color: #ff85a2;
 }
 
+/* ===========================
+   Header Icons Design (Updated)
+   =========================== */
+
+/* আইকনগুলোর কন্টেইনার */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* আইকনগুলোর মাঝে ফাঁকা */
+}
+
+/* ১. লগইন আইকন ডিজাইন */
+.login-btn i {
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn i:hover {
+  color: #ff85a2; /* পিংক কালার */
+  transform: scale(1.1);
+}
+
+/* ২. মেনু আইকন (ডেস্কটপে লুকানো থাকবে) */
 .icon {
   font-size: 25px;
-  color: black;
-  margin-left: 20px;
-  transition: 0.7s;
+  color: #333;
   cursor: pointer;
-  display: none;
+  display: none; /* ⚠️ ডেস্কটপে এটা দেখা যাবে না */
 }
 
 .icon:hover {
-  transform: rotate(15deg);
   color: #ff85a2;
+}
+
+/* ===========================
+   MEDIA QUERY (Mobile Fix)
+   =========================== */
+
+@media (max-width: 768px) {
+  /* মোবাইলে মেনু আইকন শো করা */
+  .icon {
+    display: block; /* এখন হ্যামবার্গার দেখা যাবে */
+  }
+
+  /* লগইন আইকন মোবাইলে একটু ছোট করা */
+  .login-btn i {
+    font-size: 20px;
+  }
 }
 @keyframes slideDown {
   0% {
@@ -120,7 +158,7 @@ body {
 }
 /* ৩. হিরো সেকশন (মেইন ফিক্স) */
 .hero {
-  margin-top: 80px;
+  margin-top: 50px;
   min-height: 90vh;
   background: linear-gradient(to right, #fff5f8, #ffe3ec);
 
@@ -201,7 +239,9 @@ body {
   width: 90%;
   max-width: 500px;
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
-  animation: cakeAppear 1s ease forwards, float 4s ease-in-out infinite 1s;
+  animation:
+    cakeAppear 1s ease forwards,
+    float 4s ease-in-out infinite 1s;
 }
 
 @keyframes float {

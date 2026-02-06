@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -72,19 +72,18 @@
       </div>
     </div>
     <!-- Navbar -->
-    <header class="header" id="header">
+    <header class="header">
       <div class="logo">
-        <a href="#">The <span id="pink">Jannat</span> Bakehouse</a>
+        <a href="index.html">The <span id="pink">Jannat</span> Bakehouse</a>
       </div>
-      <nav class="navbar">
-        <a href="#header">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="icon"><i class="fa-solid fa-bars"></i></div>
-    </header>
 
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html#menu">Menu</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
     <!-- Hero Section -->
     <section class="hero" id="home">
       <!-- বাম পাশ: লেখা -->
@@ -100,7 +99,7 @@
             href="https://wa.me/8801622229921?text=I want to order this cake"
             class="btn-whatsapp"
           >
-            <i class="fa-brands fa-whatsapp"></i> Order Now
+            <i class="fa-brands fa-whatsapp"></i> Custom Order
           </a>
         </button>
       </div>
@@ -135,7 +134,14 @@
           <div class="price">Chocolate flavor</div>
           <button
             class="btn"
-            onclick="showDetails('tranding.jpeg', 'Red Heart Velvet', '750 Tk / pound',  'Available weight and flavor .')"
+            onclick="
+              showDetails(
+                'tranding.jpeg',
+                'Red Heart Velvet',
+                '750 Tk / pound',
+                'Available weight and flavor .',
+              )
+            "
           >
             More Info
           </button>
@@ -158,7 +164,14 @@
           <div class="price">Vanilla flavor</div>
           <button
             class="btn"
-            onclick="showDetails('most sell.jpeg', 'Royal Blue & Gold', '1400 Tk', 'Available weight and flavor ')"
+            onclick="
+              showDetails(
+                'most sell.jpeg',
+                'Royal Blue & Gold',
+                '1400 Tk',
+                'Available weight and flavor ',
+              )
+            "
           >
             More Info
           </button>
@@ -181,7 +194,14 @@
 
           <button
             class="btn"
-            onclick="showDetails('hot.jpeg', 'Pink Dream', '950 Tk / pound', 'Available weight and flavor.')"
+            onclick="
+              showDetails(
+                'hot.jpeg',
+                'Pink Dream',
+                '950 Tk / pound',
+                'Available weight and flavor.',
+              )
+            "
           >
             More Info
           </button>
@@ -207,7 +227,14 @@
             <!-- 👇 JS Logic Added Here -->
             <button
               class="btn"
-              onclick="showDetails('menu2.jpeg', 'Yellow Night Delight', '800 Tk / pound', 'Perfect for Halud or Mehendi events. Available in 1-5 pounds.')"
+              onclick="
+                showDetails(
+                  'menu2.jpeg',
+                  'Yellow Night Delight',
+                  '800 Tk / pound',
+                  'Perfect for Halud or Mehendi events. Available in 1-5 pounds.',
+                )
+              "
             >
               More Info
             </button>
@@ -225,7 +252,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu1.jpeg', 'Red Couple Cake', '1200 Tk / pound', 'Romantic red velvet cake for engagements and anniversaries.')"
+              onclick="
+                showDetails(
+                  'menu1.jpeg',
+                  'Red Couple Cake',
+                  '1200 Tk / pound',
+                  'Romantic red velvet cake for engagements and anniversaries.',
+                )
+              "
             >
               More Info
             </button>
@@ -243,7 +277,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu4.jpg', 'Pink Barbie Fantasy', '1000 Tk / pound', 'A dream cake for every little princess\'s birthday.')"
+              onclick="
+                showDetails(
+                  'menu4.jpg',
+                  'Pink Barbie Fantasy',
+                  '1000 Tk / pound',
+                  'A dream cake for every little princess\'s birthday.',
+                )
+              "
             >
               More Info
             </button>
@@ -261,7 +302,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu5.jpg', 'Floral Red Velvet', '900 Tk / pound', 'Beautifully decorated with edible flowers. Best for gifts.')"
+              onclick="
+                showDetails(
+                  'menu5.jpg',
+                  'Floral Red Velvet',
+                  '900 Tk / pound',
+                  'Beautifully decorated with edible flowers. Best for gifts.',
+                )
+              "
             >
               More Info
             </button>
@@ -279,7 +327,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu3.jpeg', 'Safe Journey Cake', '1100 Tk / pound', 'Best for wishing someone a safe flight or trip.')"
+              onclick="
+                showDetails(
+                  'menu3.jpeg',
+                  'Safe Journey Cake',
+                  '1100 Tk / pound',
+                  'Best for wishing someone a safe flight or trip.',
+                )
+              "
             >
               More Info
             </button>
@@ -297,7 +352,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu7.jpg', 'red Butterfly', '950 Tk / pound', 'Elegant design with purple butterflies.')"
+              onclick="
+                showDetails(
+                  'menu7.jpg',
+                  'red Butterfly',
+                  '950 Tk / pound',
+                  'Elegant design with purple butterflies.',
+                )
+              "
             >
               More Info
             </button>
@@ -317,7 +379,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu8.jpg', 'Floral Red Velvet', '1100 Tk / pound', 'Best for wishing someone a safe flight or trip.')"
+              onclick="
+                showDetails(
+                  'menu8.jpg',
+                  'Floral Red Velvet',
+                  '1100 Tk / pound',
+                  'Best for wishing someone a safe flight or trip.',
+                )
+              "
             >
               More Info
             </button>
@@ -336,7 +405,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu12.jpeg', 'Lavender Dream', '1100 Tk / pound', 'Soft purple frosting with elegant ribbon details. A classy choice for any celebration.')"
+              onclick="
+                showDetails(
+                  'menu12.jpeg',
+                  'Lavender Dream',
+                  '1100 Tk / pound',
+                  'Soft purple frosting with elegant ribbon details. A classy choice for any celebration.',
+                )
+              "
             >
               More Info
             </button>
@@ -355,7 +431,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu13.jpeg', ' Super Mom Special', '1100 Tk / pound', 'A heartfelt tribute to mothers. Beautifully designed with edible art and gold foil touches.')"
+              onclick="
+                showDetails(
+                  'menu13.jpeg',
+                  ' Super Mom Special',
+                  '1100 Tk / pound',
+                  'A heartfelt tribute to mothers. Beautifully designed with edible art and gold foil touches.',
+                )
+              "
             >
               More Info
             </button>
@@ -374,7 +457,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu14.jpeg', 'The Gentlemans Choice', '1100 Tk / pound', 'Stylish cake featuring a suit theme with premium gold and silver accents. Perfect for him.')"
+              onclick="
+                showDetails(
+                  'menu14.jpeg',
+                  'The Gentlemans Choice',
+                  '1100 Tk / pound',
+                  'Stylish cake featuring a suit theme with premium gold and silver accents. Perfect for him.',
+                )
+              "
             >
               More Info
             </button>
@@ -393,7 +483,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu15.jpeg', ' Red Heart Milestone', '1100 Tk / pound', 'Celebrate special days with this minimalist white cake topped with a bold red heart.')"
+              onclick="
+                showDetails(
+                  'menu15.jpeg',
+                  ' Red Heart Milestone',
+                  '1100 Tk / pound',
+                  'Celebrate special days with this minimalist white cake topped with a bold red heart.',
+                )
+              "
             >
               More Info
             </button>
@@ -413,7 +510,14 @@
             <div class="price">Available</div>
             <button
               class="btn"
-              onclick="showDetails('menu9.jpg', ' Romantic Rose Delight', '1100 Tk / pound', 'Classic vanilla cake wrapped in a red ribbon, topped with a fresh red rose. Simple yet elegant.')"
+              onclick="
+                showDetails(
+                  'menu9.jpg',
+                  ' Romantic Rose Delight',
+                  '1100 Tk / pound',
+                  'Classic vanilla cake wrapped in a red ribbon, topped with a fresh red rose. Simple yet elegant.',
+                )
+              "
             >
               More Info
             </button>
